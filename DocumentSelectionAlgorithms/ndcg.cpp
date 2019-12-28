@@ -14,9 +14,9 @@ long double get_ndcg(vector < int > rel) {
     
     // calculating DCG
     long double dcg = 0.0;
-    // for (int i = 1; i <= rel.size(); i++) {
-    //     dcg += (pow(2, rel[i - 1]) - 1) / log2(i + 1);
-    // }
+//    for (int i = 1; i <= rel.size(); i++) {
+//        dcg += (pow(2, rel[i - 1]) - 1) / log2(i + 1);
+//    }
     for (int i = 1; i <= rel.size(); i++) {
         dcg += rel[i - 1] / log2(i + 1);
     }

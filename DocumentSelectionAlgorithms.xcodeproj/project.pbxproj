@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D07146DA23B6B460002733B8 /* algo12.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D07146D923B6B460002733B8 /* algo12.cpp */; };
+		D07146DC23B6BA15002733B8 /* algo13.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D07146DB23B6BA15002733B8 /* algo13.cpp */; };
+		D07146DE23B6BC61002733B8 /* algo14.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D07146DD23B6BC61002733B8 /* algo14.cpp */; };
+		D07146E023B6C641002733B8 /* algo12.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D07146DF23B6C5A7002733B8 /* algo12.h */; };
 		D0E5B63623B1932000E95663 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D0E5B63523B1932000E95663 /* main.cpp */; };
 		D0E5B64423B19A1400E95663 /* algo1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D0E5B64223B19A1400E95663 /* algo1.cpp */; };
 		D0E5B64823B19C1A00E95663 /* hedge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D0E5B64623B19C1A00E95663 /* hedge.cpp */; };
@@ -26,6 +30,7 @@
 			dstPath = /usr/share/man/man1/;
 			dstSubfolderSpec = 0;
 			files = (
+				D07146E023B6C641002733B8 /* algo12.h in CopyFiles */,
 				D0E5B65323B1A6E100E95663 /* variables.h in CopyFiles */,
 				D0E5B64E23B19ED300E95663 /* hedge.h in CopyFiles */,
 				D0E5B64F23B19ED300E95663 /* ndcg.h in CopyFiles */,
@@ -37,6 +42,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D07146D923B6B460002733B8 /* algo12.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = algo12.cpp; sourceTree = "<group>"; };
+		D07146DB23B6BA15002733B8 /* algo13.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = algo13.cpp; sourceTree = "<group>"; };
+		D07146DD23B6BC61002733B8 /* algo14.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = algo14.cpp; sourceTree = "<group>"; };
+		D07146DF23B6C5A7002733B8 /* algo12.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = algo12.h; sourceTree = "<group>"; };
+		D07146E123B6C92C002733B8 /* algo13.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = algo13.h; sourceTree = "<group>"; };
+		D07146E223B6C942002733B8 /* algo14.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = algo14.h; sourceTree = "<group>"; };
 		D0E5B63223B1932000E95663 /* DocumentSelectionAlgorithms */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DocumentSelectionAlgorithms; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0E5B63523B1932000E95663 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		D0E5B64123B195D500E95663 /* common.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; path = common.h; sourceTree = "<group>"; };
@@ -84,10 +95,16 @@
 				D0E5B65823B1AC7D00E95663 /* ndcg.cpp */,
 				D0E5B65423B1A88900E95663 /* common.cpp */,
 				D0E5B64223B19A1400E95663 /* algo1.cpp */,
+				D07146D923B6B460002733B8 /* algo12.cpp */,
+				D07146DB23B6BA15002733B8 /* algo13.cpp */,
+				D07146DD23B6BC61002733B8 /* algo14.cpp */,
 				D0E5B64623B19C1A00E95663 /* hedge.cpp */,
 				D0E5B64923B19C9500E95663 /* hedge.h */,
 				D0E5B64523B19B8700E95663 /* ndcg.h */,
 				D0E5B64323B19A1400E95663 /* algo1.h */,
+				D07146DF23B6C5A7002733B8 /* algo12.h */,
+				D07146E123B6C92C002733B8 /* algo13.h */,
+				D07146E223B6C942002733B8 /* algo14.h */,
 				D0E5B64123B195D500E95663 /* common.h */,
 				D0E5B65223B1A38200E95663 /* variables.h */,
 			);
@@ -155,9 +172,12 @@
 			files = (
 				D0E5B65523B1A88900E95663 /* common.cpp in Sources */,
 				D0E5B64423B19A1400E95663 /* algo1.cpp in Sources */,
+				D07146DC23B6BA15002733B8 /* algo13.cpp in Sources */,
+				D07146DE23B6BC61002733B8 /* algo14.cpp in Sources */,
 				D0E5B64823B19C1A00E95663 /* hedge.cpp in Sources */,
 				D0E5B65923B1AC7D00E95663 /* ndcg.cpp in Sources */,
 				D0E5B63623B1932000E95663 /* main.cpp in Sources */,
+				D07146DA23B6B460002733B8 /* algo12.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

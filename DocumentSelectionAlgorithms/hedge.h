@@ -10,11 +10,8 @@
 #define hedge_h
 
 #include "common.h"
-#include "ndcg.h"
 
-extern void get_runs(string runs_path);
-extern void get_all_docs(string qrel_path);
-extern void run_algo_for_query(int qid);
+void run_hedge_for_query(int qid, FILE *ofile);
 extern long double get_ndcg(vector < int > rel);
 
 //extern string qrel_path;

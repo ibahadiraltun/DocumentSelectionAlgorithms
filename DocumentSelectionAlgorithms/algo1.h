@@ -1,22 +1,22 @@
-////
-////  algo1.h
-////  DocumentSelectionAlgorithms
-////
-////  Created by Bahadir Altun on 24.12.2019.
-////  Copyright © 2019 Bahadir Altun. All rights reserved.
-////
 //
-//#ifndef algo1_h
-//#define algo1_h
+//  algo1.h
+//  DocumentSelectionAlgorithms
 //
-//#include "common.h"
-//#include "ndcg.h"
+//  Created by Bahadir Altun on 24.12.2019.
+//  Copyright © 2019 Bahadir Altun. All rights reserved.
 //
-//extern void get_runs(string runs_path);
-//extern void get_all_docs(string qrel_path);
-//extern void run_algo1_for_query(int qid);
-//extern long double get_ndcg(vector < int > rel);
-//
+
+#ifndef algo1_h
+#define algo1_h
+
+#include "common.h"
+
+void run_algo1_for_query(int qid, FILE *ofile);
+//extern void run_algo12_for_query(int qid, FILE *ofile);
+//extern void run_algo13_for_query(int qid, FILE *ofile);
+//extern void run_algo14_for_query(int qid, FILE *ofile);
+extern long double get_ndcg(vector < int > rel);
+
 //extern const int DOC_SIZE;
 //extern const int QID_SIZE;
 //extern const int RUN_SIZE;
@@ -43,5 +43,5 @@
 //
 //extern long double alpha;
 //extern long double beta;
-//
-//#endif /* algo1_h */
+
+#endif /* algo1_h */

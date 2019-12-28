@@ -9,8 +9,16 @@
 #ifndef variables_h
 #define variables_h
 
-void get_runs(string runs_path);
-void get_all_docs(string qrel_path);
+extern void get_runs(string runs_path);
+extern void get_all_docs(string qrel_path);
+extern void run_hedge_for_query(int qid, FILE *ofile);
+extern void run_algo1_for_query(int qid, FILE *ofile);
+extern void run_algo12_for_query(int qid, FILE *ofile);
+extern void run_algo13_for_query(int qid, FILE *ofile);
+extern void run_algo14_for_query(int qid, FILE *ofile);
+extern long double get_ndcg(vector < int > rel);
+
+
 //
 //const int DOC_SIZE = 2e5 + 9;
 //const int QID_SIZE = 5e2 + 9;

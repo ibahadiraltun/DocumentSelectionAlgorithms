@@ -77,20 +77,11 @@ void get_runs(string runs_path) {
                     _rank = raw_in[i].second.second;
                     if (i == 0 or qid_id != raw_in[i - 1].first.first) {
                         tot = 1;
-                        // cout << _qid << ' ' << raw_in[i - 1].first.second << endl;
-                    } else if (true or i == 0 or _score != raw_in[i - 1].first.second) {
+                    } else if (i == 0 or _score != raw_in[i - 1].first.second) {
                         tot++;
-                        // clcout << "------> " << tot << endl;
                     }
                     // ranks[make_pair(current_run, make_pair(_qid, _docid))] = tot;
-                    
                     ranks[run_id][qid_id][docid_id] = tot;
-
-//                    if (run_id == 1) {
-//                     cout << _score << " " << qid_id << " " << docid_id << " " << _rank << " " << endl;
-//                     cout << "run = " << id2run[run_id] << " - qid = " << id2qid[qid_id] << " docid = " << id2docid[docid_id] << " rank = " << tot << endl;
-//                     cout << "------------" << endl;
-//                    }
                 }
                 
                 raw_in.clear();

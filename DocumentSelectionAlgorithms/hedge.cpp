@@ -12,9 +12,9 @@
 
 #include "hedge.h"
 
-void run_hedge_for_query(int qid, string out_fpath) {
+void run_hedge_for_query(int qid, FILE *ofile) {
     
-    FILE *ofile = fopen(out_fpath.c_str(), "a");
+//    FILE *ofile = fopen(out_fpath.c_str(), "a");
     
     if (ofile == NULL) {
         printf("ERROR!!! %s cannot be opened\n", out_fpath.c_str());
@@ -175,8 +175,6 @@ void run_hedge_for_query(int qid, string out_fpath) {
             }
         }
     }
-    
-    fclose(ofile);
     
     // cout << judgedDocs.size() << ' ' << doc_list[qid].size() << endl;
     

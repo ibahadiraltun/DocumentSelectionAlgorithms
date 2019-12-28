@@ -11,4 +11,6 @@
 
 #include "common.h"
 
+long double get_ndcg(vector < int > rel);
+
 #endif /* ndcg_h */

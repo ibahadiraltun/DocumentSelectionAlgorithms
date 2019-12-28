@@ -9,9 +9,6 @@
 #include "common.h"
 #include "variables.h"
 
-void run_algo1_for_query(int qid, string out_fpath);
-void run_hedge_for_query(int qid, string out_fpath);
-
 int main(int argc, char *argv[]) {
 
     // Fast I/O
@@ -35,11 +32,15 @@ int main(int argc, char *argv[]) {
 
     get_all_docs(qrel_path);
     get_runs(runs_path);
+    
+    FILE *ofile = fopen(out_fpath.c_str(), "w");
 
     for (int i = 0; i < queries.size(); i++) {
         cerr << "running algo for query -> " << queries[i] << " - " << id2qid[queries[i]] << endl;
-        run_hedge_for_query(queries[i], out_fpath);
+        run_algo14_for_query(queries[i], ofile);
     }
+    
+    fclose(ofile);
     
     int _tmp;
     cout << "terminating... ";
