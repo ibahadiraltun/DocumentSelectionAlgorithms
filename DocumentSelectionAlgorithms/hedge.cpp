@@ -126,7 +126,7 @@ void run_hedge_for_query(int qid, FILE *ofile) {
             int s = all_runs[i];
             int cur_rank;
             if (runs[s][qid].find(dmax.first) != runs[s][qid].end()) {
-                loss_run[s] = ((rel_dmax ? -1 : 1) * log(rmax / ranks[s][qid][dmax.first])) / 2.0;
+                loss_run[s] = ((rel_dmax ? -1 : 1) * log((double) rmax / ranks[s][qid][dmax.first])) / 2.0;
             } else {
                 // this doc was not retrieved by s
                 int ts = num_of_docs_by_run[s][qid];

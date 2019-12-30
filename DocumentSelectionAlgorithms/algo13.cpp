@@ -57,7 +57,7 @@ void run_algo13_for_query(int qid, FILE *ofile) {
             int d = doc_list[qid][j]; // current document
             if (runs[s][qid].find(d) != runs[s][qid].end()) {
                 // this doc was retrieved by current run
-                loss[s][d] = log10(rmax / ranks[s][qid][d]) / 2.0;
+                loss[s][d] = log10((double) rmax / ranks[s][qid][d]) / 2.0;
                 // loss[make_pair(s, d)] = log10(rmax / ranks[make_pair(s, make_pair(qid, d))]) / 2.0;
             } else {
                 // this doc was not retrieved current run

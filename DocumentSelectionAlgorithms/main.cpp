@@ -37,7 +37,7 @@ int main(int argc, char *argv[]) {
 
     for (int i = 0; i < queries.size(); i++) {
         cerr << "running algo for query -> " << queries[i] << " - " << id2qid[queries[i]] << endl;
-        run_algo14_for_query(queries[i], ofile);
+        run_algo2_for_query(queries[i], ofile);
     }
     
     fclose(ofile);

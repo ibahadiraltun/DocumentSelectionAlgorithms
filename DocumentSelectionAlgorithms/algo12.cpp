@@ -57,7 +57,7 @@ void run_algo12_for_query(int qid, FILE *ofile) {
             int d = doc_list[qid][j]; // current document
             if (runs[s][qid].find(d) != runs[s][qid].end()) {
                 // this doc was retrieved by current run
-                loss[s][d] = log10(rmax / ranks[s][qid][d]) / 2.0;
+                loss[s][d] = log10((double) rmax / ranks[s][qid][d]) / 2.0;
                 // loss[make_pair(s, d)] = log10(rmax / ranks[make_pair(s, make_pair(qid, d))]) / 2.0;
             } else {
                 // this doc was not retrieved current run
@@ -125,7 +125,8 @@ void run_algo12_for_query(int qid, FILE *ofile) {
         long double all_weights = 0.0;
         for (int i = 0; i < all_runs.size(); i++) {
             int s = all_runs[i];
-            weights[s] = weights[s] * pow(beta, loss_run[s] + alpha);
+            // weights[s] = weights[s] * pow(beta, loss_run[s] + alpha);
+            weights[s] = loss_run[s] + alpha;
             if (weights[s] == 0) {
                 cerr << "weight of run " << s << " - " << judgedDocs.size() << " " << id2run[s] << " is === 0" << endl;
 //                cerr << "THIS IS A SERIOUS ISSUE! FIX IT !!!" << endl;

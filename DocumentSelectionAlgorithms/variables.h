@@ -16,7 +16,10 @@ extern void run_algo1_for_query(int qid, FILE *ofile);
 extern void run_algo12_for_query(int qid, FILE *ofile);
 extern void run_algo13_for_query(int qid, FILE *ofile);
 extern void run_algo14_for_query(int qid, FILE *ofile);
-extern long double get_ndcg(vector < int > rel);
+extern void run_algo15_for_query(int qid, FILE *ofile);
+extern void run_algo16_for_query(int qid, FILE *ofile);
+extern void run_algo2_for_query(int qid, FILE *ofile);
+extern long double get_ndcg(vector < long double > rel);
 
 
 //
@@ -53,7 +56,7 @@ map < int, string > id2run, id2docid;
 vector < int > doc_list[UQID_SIZE], doc_list_all[UQID_SIZE];
 int rel_table[UQID_SIZE][DOC_SIZE];
 set < int > runs[RUN_SIZE][UQID_SIZE];
-vector < int > runs_vector[RUN_SIZE][UQID_SIZE];
+vector < long double > runs_vector[RUN_SIZE][UQID_SIZE];
 int num_of_docs_by_run[RUN_SIZE][UQID_SIZE];
 unordered_map < int, int > ranks[RUN_SIZE][UQID_SIZE];
 
@@ -69,7 +72,7 @@ long double loss[RUN_SIZE][DOC_SIZE], loss_run[RUN_SIZE];
 //map < string, long double > weights, probs;
 //map < pair < string, string >, long double > loss;
 
-long double alpha = 0.1;
+long double alpha = 0.0001;
 long double beta = 0.1;
 
 #endif /* variables_h */

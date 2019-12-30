@@ -12,7 +12,7 @@
 #include "common.h"
 
 void run_hedge_for_query(int qid, FILE *ofile);
-extern long double get_ndcg(vector < int > rel);
+extern long double get_ndcg(vector < long double > rel);
 
 //extern string qrel_path;
 //extern string runs_path;

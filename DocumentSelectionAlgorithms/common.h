@@ -67,7 +67,7 @@ extern map < int, string > id2run, id2docid;
 extern vector < int > doc_list[UQID_SIZE], doc_list_all[UQID_SIZE];
 extern int rel_table[UQID_SIZE][DOC_SIZE];
 extern set < int > runs[RUN_SIZE][UQID_SIZE];
-extern vector < int > runs_vector[RUN_SIZE][UQID_SIZE];
+extern vector < long double > runs_vector[RUN_SIZE][UQID_SIZE];
 extern int num_of_docs_by_run[RUN_SIZE][UQID_SIZE];
 extern unordered_map < int, int > ranks[RUN_SIZE][UQID_SIZE];
 

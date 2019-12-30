@@ -15,6 +15,6 @@ void run_algo14_for_query(int qid, FILE *ofile);
 //extern void run_algo12_for_query(int qid, FILE *ofile);
 //extern void run_algo13_for_query(int qid, FILE *ofile);
 //extern void run_algo14_for_query(int qid, FILE *ofile);
-extern long double get_ndcg(vector < int > rel);
+extern long double get_ndcg(vector < long double > rel);
 
 #endif /* algo14_h */

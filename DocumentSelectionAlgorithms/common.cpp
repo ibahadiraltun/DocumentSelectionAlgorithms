@@ -57,7 +57,7 @@ void get_runs(string runs_path) {
                         doc_list[qid_id].push_back(docid_id);
                     }
                     runs[run_id][qid_id].insert(docid_id);
-                    runs_vector[run_id][qid_id].push_back(0);
+                    runs_vector[run_id][qid_id].push_back(0.0);
                     int tmp = ++num_of_docs_by_run[run_id][qid_id];
                     doc_list_all[qid_id].push_back(docid_id);
                     all_docs.push_back(docid_id);
@@ -77,8 +77,12 @@ void get_runs(string runs_path) {
                     _rank = raw_in[i].second.second;
                     if (i == 0 or qid_id != raw_in[i - 1].first.first) {
                         tot = 1;
+                        tot2 = 0;
                     } else if (i == 0 or _score != raw_in[i - 1].first.second) {
-                        tot++;
+                        tot += tot2 + 1;
+                        tot2 = 0;
+                    } else {
+                        tot2++;
                     }
                     // ranks[make_pair(current_run, make_pair(_qid, _docid))] = tot;
                     ranks[run_id][qid_id][docid_id] = tot;

@@ -21,7 +21,7 @@ qrel_path = BASE_FOLDER + TREC_VERSION
 runs_path = TREC_DATA_PATH + TREC_VERSION + "/results/"
 
 # const_file_path = 'judgments/'
-strategies = ['algo14']
+strategies = ['algo2']
 
 qrels_df = pd.read_csv(official_qrel_path, names = ['qid', 'x1', 'doc', 'rel'], sep = ' ')
 queries = np.unique(qrels_df['qid'])
@@ -44,7 +44,7 @@ for i in range(0, len(team_list)):
 
 cnt = 0
 for cur_team in team_list:
-    # os.system('{} -m map {} {}input.{} > {}{}.txt'.format(TREC_EVAL_PATH, official_qrel_path, runs_path, cur_team, SYSTEM_RUN_RESULTS, cur_team ))
+    os.system('{} -m map {} {}input.{} > {}{}.txt'.format(TREC_EVAL_PATH, official_qrel_path, runs_path, cur_team, SYSTEM_RUN_RESULTS, cur_team ))
     # os.system('{} -q -m map {} {}input.{} > {}{}'.format(TREC_EVAL_PATH, official_qrel_path, runs_path, cur_team, BASEDIR_DRANK, cur_team ))
     score = 0
     with open('{}{}.txt'.format(SYSTEM_RUN_RESULTS,cur_team)) as tmp_file:
@@ -99,7 +99,7 @@ while judge_count <= 500:
         tau, p_value = stats.kendalltau(groundtruth_scores, predicted_scores)
         print(cur_strategy, 'judge_count === ', judge_count, 'tau === ', tau, 'p_value === ', p_value)
         with open('{}{}_map_tau'.format(TEST_SCORES_PATH, cur_strategy), 'a') as score_file:
-            score_file.write('{} {}\n'.format(judge_count, tau))
+            score_file.write('{}\n'.format(str(tau)[0:6]))
 
     judge_count =  judge_count + 25
 

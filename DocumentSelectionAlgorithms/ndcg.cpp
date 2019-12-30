@@ -10,7 +10,7 @@
 
 #include "ndcg.h"
 
-long double get_ndcg(vector < int > rel) {
+long double get_ndcg(vector < long double > rel) {
     
     // calculating DCG
     long double dcg = 0.0;
