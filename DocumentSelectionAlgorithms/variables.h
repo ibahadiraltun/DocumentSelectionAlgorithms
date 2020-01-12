@@ -19,6 +19,7 @@ extern void run_algo14_for_query(int qid, FILE *ofile);
 extern void run_algo15_for_query(int qid, FILE *ofile);
 extern void run_algo16_for_query(int qid, FILE *ofile);
 extern void run_algo2_for_query(int qid, FILE *ofile);
+extern void run_algo4_for_query(int qid, FILE *ofile, int current_tot_queries, int judge_count);
 extern long double get_ndcg(vector < long double > rel);
 
 
@@ -62,6 +63,7 @@ unordered_map < int, int > ranks[RUN_SIZE][UQID_SIZE];
 
 long double weights[RUN_SIZE], probs[RUN_SIZE];
 long double loss[RUN_SIZE][DOC_SIZE], loss_run[RUN_SIZE];
+long double glob_ndcg[RUN_SIZE];
 
 //map < int, vector < string > > doc_list;
 //map < pair < int, string >, int > rel_table;

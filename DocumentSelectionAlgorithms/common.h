@@ -73,6 +73,7 @@ extern unordered_map < int, int > ranks[RUN_SIZE][UQID_SIZE];
 
 extern long double weights[RUN_SIZE], probs[RUN_SIZE];
 extern long double loss[RUN_SIZE][DOC_SIZE], loss_run[RUN_SIZE];
+extern long double glob_ndcg[RUN_SIZE];
 
 //map < int, vector < string > > doc_list;
 //map < pair < int, string >, int > rel_table;

@@ -9,6 +9,8 @@ algo16 algo15 + ln = 0
 algo2:
 	Agirlik kullanilmiyor. Her dokuman icin belirlenen bir score var. Ancak bir dokuman secildiginde butun sistemlerden secilen dokuman cikarilip bu score lar tekrar hesaplaniyor. Suana kadar olan algoritmalarda bu yontem bulunmuyor. Bunu kullandigimiz zaman hem fair hem de duzgun sonuclara ulasilabilir.
 
+algo4:
+	Algo1 + her query baslangicinda suana kadarki querylerin ort ndcg si baslangic weightleri olur.
 
 S1 B1 C0 D0 E0
 S2 X0 B1 C0 D0 
