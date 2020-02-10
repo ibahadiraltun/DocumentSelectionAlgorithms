@@ -20,6 +20,8 @@ extern void run_algo15_for_query(int qid, FILE *ofile);
 extern void run_algo16_for_query(int qid, FILE *ofile);
 extern void run_algo2_for_query(int qid, FILE *ofile);
 extern void run_algo4_for_query(int qid, FILE *ofile, int current_tot_queries, int judge_count);
+extern void run_algo5_for_query(int qid, FILE *ofile, int current_tot_queries, int judge_count);
+extern void run_algo6_for_query(int qid, FILE *ofile, int current_tot_queries, int judge_count);
 extern long double get_ndcg(vector < long double > rel);
 
 
@@ -30,9 +32,9 @@ extern long double get_ndcg(vector < long double > rel);
 //const int RUN_SIZE = 1e2 + 9;
 
 #define DOC_SIZE (800009)
-#define QID_SIZE (509)
+#define QID_SIZE (1009)
 #define UQID_SIZE (509)
-#define RUN_SIZE (109)
+#define RUN_SIZE (509)
 #define JUDG_SIZE (1000)
 #define POOL_SIZE (100)
 
@@ -57,6 +59,7 @@ map < int, string > id2run, id2docid;
 vector < int > doc_list[UQID_SIZE], doc_list_all[UQID_SIZE];
 int rel_table[UQID_SIZE][DOC_SIZE];
 set < int > runs[RUN_SIZE][UQID_SIZE];
+vector < int > runs_vector_docs[RUN_SIZE][UQID_SIZE];
 vector < long double > runs_vector[RUN_SIZE][UQID_SIZE];
 int num_of_docs_by_run[RUN_SIZE][UQID_SIZE];
 unordered_map < int, int > ranks[RUN_SIZE][UQID_SIZE];

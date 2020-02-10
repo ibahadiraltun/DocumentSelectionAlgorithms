@@ -170,8 +170,8 @@ void run_hedge_for_query(int qid, FILE *ofile) {
             probs[s] = weights[s] / all_weights;
             if (probs[s] == 0) {
                 cerr << "prob ====== 0 =============> " << judgedDocs.size() << " " << weights[s] << ' ' << all_weights << ' ' << loss_run[s] << endl;
-                cerr << "THIS IS A SERIOUS ISSUE! FIX IT !!!" << endl;
-                exit(0);
+                // cerr << "THIS IS A SERIOUS ISSUE! FIX IT !!!" << endl;
+                // exit(0);
             }
         }
     }

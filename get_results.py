@@ -6,10 +6,10 @@ from collections import namedtuple
 
 system_run = namedtuple("system_run", "name map")
 
-# BASE_FOLDER="/Users/ibahadiraltun/Desktop/InformationRetrieval/DocumentSelectionAlgorithms"
-BASE_FOLDER = "";
+BASE_FOLDER="/Users/ibahadiraltun/Desktop/InformationRetrieval/DocumentSelectionAlgorithms/"
+# BASE_FOLDER = "";
 
-TREC_VERSION="trec-8"
+TREC_VERSION="trec-8" # sadece scorelandirmasi kaldi, robust2004 bos
 TREC_DATA_PATH= BASE_FOLDER + "trec_dataset/"
 SYSTEM_RUN_RESULTS=BASE_FOLDER + "system_run_results/" + TREC_VERSION + "/"
 TREC_EVAL_PATH= BASE_FOLDER +  "trec_eval/./trec_eval"
@@ -21,7 +21,9 @@ qrel_path = BASE_FOLDER + TREC_VERSION
 runs_path = TREC_DATA_PATH + TREC_VERSION + "/runs/"
 
 # const_file_path = 'judgments/'
-strategies = ['algo12', 'algo13', 'algo14', 'algo15', 'algo16', 'algo2']
+# strategies = ['algo12', 'algo13', 'algo14', 'algo15', 'algo16', 'algo2']
+
+strategies = ['algo6']
 
 qrels_df = pd.read_csv(official_qrel_path, names = ['qid', 'x1', 'doc', 'rel'], sep = ' ')
 queries = np.unique(qrels_df['qid'])
@@ -44,7 +46,7 @@ for i in range(0, len(team_list)):
 
 cnt = 0
 for cur_team in team_list:
-    # os.system('{} -m map {} {}input.{} > {}{}.txt'.format(TREC_EVAL_PATH, official_qrel_path, runs_path, cur_team, SYSTEM_RUN_RESULTS, cur_team ))
+    os.system('{} -m map {} {}input.{} > {}{}.txt'.format(TREC_EVAL_PATH, official_qrel_path, runs_path, cur_team, SYSTEM_RUN_RESULTS, cur_team ))
     # os.system('{} -q -m map {} {}input.{} > {}{}'.format(TREC_EVAL_PATH, official_qrel_path, runs_path, cur_team, BASEDIR_DRANK, cur_team ))
     score = 0
     with open('{}{}.txt'.format(SYSTEM_RUN_RESULTS,cur_team)) as tmp_file:
@@ -55,28 +57,28 @@ for cur_team in team_list:
 
 print('system results finished\n')
 
-judge_count = 50
-while judge_count <= 500:
-    for cur_strategy in strategies:
-        new_qrel_file = BASE_FOLDER + "new_qrels/" + TREC_VERSION + '/' + cur_strategy + "_" + str(judge_count)
-        print(judge_count, new_qrel_file)
-        with open(new_qrel_file, 'w') as f_qrel:
-            total_rel = 0
-            for qid in queries:
-                file_path = BASE_FOLDER + "new_judgments/" + TREC_VERSION + '/' +  cur_strategy + "_judgments"
-                df = pd.read_csv(file_path, sep = ' ',  names = ['qid', 'x1', 'doc', 'rel'])
-                # df.columns = ['id', 'doc']
-                # df.columns = ['qid', 'x1', 'doc', 'rel']
-                # print(df.head(5))
-                cur_judges = df[df['qid'] == qid]
-                cur_judges = cur_judges.iloc[0:judge_count]
-                for k, j in cur_judges.iterrows():
-                    cur_doc = j['doc']
-                    cur_rel = j['rel']
-                    if cur_rel > 0: total_rel = total_rel + 1
-                    line = '{} 0 {} {}\n'.format(qid, cur_doc, cur_rel)
-                    f_qrel.write(line)
-    judge_count = judge_count + 50
+# judge_count = 50
+# while judge_count <= 500:
+#     for cur_strategy in strategies:
+#         new_qrel_file = BASE_FOLDER + "new_qrels/" + TREC_VERSION + '/' + cur_strategy + "_" + str(judge_count)
+#         print(judge_count, new_qrel_file)
+#         with open(new_qrel_file, 'w') as f_qrel:
+#             total_rel = 0
+#             for qid in queries:
+#                 file_path = BASE_FOLDER + "new_judgments/" + TREC_VERSION + '/' +  cur_strategy + "_judgments"
+#                 df = pd.read_csv(file_path, sep = ' ',  names = ['qid', 'x1', 'doc', 'rel'])
+#                 # df.columns = ['id', 'doc']
+#                 # df.columns = ['qid', 'x1', 'doc', 'rel']
+#                 # print(df.head(5))
+#                 cur_judges = df[df['qid'] == qid]
+#                 cur_judges = cur_judges.iloc[0:judge_count]
+#                 for k, j in cur_judges.iterrows():
+#                     cur_doc = j['doc']
+#                     cur_rel = j['rel']
+#                     if cur_rel > 0: total_rel = total_rel + 1
+#                     line = '{} 0 {} {}\n'.format(qid, cur_doc, cur_rel)
+#                     f_qrel.write(line)
+#     judge_count = judge_count + 50
 
 judge_count = 50
 while judge_count <= 500:

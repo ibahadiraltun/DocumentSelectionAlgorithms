@@ -9,10 +9,29 @@
 #include "algo4.h"
 
 /*
- Algorithm 4: Same logic with Algo1, using ndcg as a weight in hedge algorithm. We keep previous topics avg ndcg as a current weights.
+ Algorithm 4: Same logic with Algo1, using ndcg as weight in hedge algorithm. We keep previous topics' avg ndcg as current weights.
 */
 
 // glob_ndcg keeps the total ndcg of systems until current qid.
+
+/*
+ - SERIOUS BUG!!!
+    When we mutate runs_vector(see line 135), it is being already calculated for later queries. Since we are operating every query for each judge_count(50, 100, ..., 150)
+    it is being meaningless for next queries.
+ 
+ To fix it:
+    Use local vector and do not change global runs_vector.
+    copy_runs_vector() is a function to copy global runs_vector.
+ 
+*/
+
+vector < long double > copy_runs_vector(int run, int qid) {
+    vector < long double > res;
+    for (int i = 0; i < runs_vector[run][qid].size(); i++) {
+        res.push_back(runs_vector[run][qid][i]);
+    }
+    return res;
+}
 
 void run_algo4_for_query(int qid, FILE *ofile, int current_tot_queries, int judge_count) {
     
@@ -29,6 +48,12 @@ void run_algo4_for_query(int qid, FILE *ofile, int current_tot_queries, int judg
     memset(weights, 0, sizeof weights);
     memset(loss, 0, sizeof loss);
     memset(loss_run, 0, sizeof loss_run);
+    
+    vector < long double > loc_runs_vector[RUN_SIZE][UQID_SIZE];
+    for (int i = 0; i < all_runs.size(); i++) {
+        int current_run = all_runs[i];
+        loc_runs_vector[current_run][qid] = copy_runs_vector(current_run, qid);
+    }
     
     // initialization with weights and probabilities
     for (int i = 0; i < all_runs.size(); i++) {
@@ -126,11 +151,11 @@ void run_algo4_for_query(int qid, FILE *ofile, int current_tot_queries, int judg
             int s = all_runs[i];
             if (ranks[s][qid][dmax.first] != 0) {
                 int index = ranks[s][qid][dmax.first] - 1;
-                runs_vector[s][qid][index] = rel_dmax;
+                loc_runs_vector[s][qid][index] = rel_dmax;
             } else {
                 // nothing.
             }
-            loss_run[s] = get_ndcg(runs_vector[s][qid]);
+            loss_run[s] = get_ndcg(loc_runs_vector[s][qid]);
         }
         
         long double all_weights = 0.0;
@@ -159,12 +184,13 @@ void run_algo4_for_query(int qid, FILE *ofile, int current_tot_queries, int judg
             }
         }
         
-        for (int i = 0; i < all_runs.size(); i++) {
-            int s = all_runs[i];
-            glob_ndcg[s] += get_ndcg(runs_vector[s][qid]);
-        }
-        
     }
+    
+    for (int i = 0; i < all_runs.size(); i++) {
+        int s = all_runs[i];
+        glob_ndcg[s] += get_ndcg(loc_runs_vector[s][qid]);
+    }
+
     
     // cout << judgedDocs.size() << ' ' << doc_list[qid].size() << endl;
     

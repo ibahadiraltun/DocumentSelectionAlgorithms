@@ -58,6 +58,7 @@ void get_runs(string runs_path) {
                     }
                     runs[run_id][qid_id].insert(docid_id);
                     runs_vector[run_id][qid_id].push_back(0.0);
+                    runs_vector_docs[run_id][qid_id].push_back(docid_id);
                     int tmp = ++num_of_docs_by_run[run_id][qid_id];
                     doc_list_all[qid_id].push_back(docid_id);
                     all_docs.push_back(docid_id);

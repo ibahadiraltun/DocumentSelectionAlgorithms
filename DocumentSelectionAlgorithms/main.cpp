@@ -39,8 +39,8 @@ int main(int argc, char *argv[]) {
         string out_fpath_judge = out_fpath + to_string(judge_count);
         FILE *ofile = fopen(out_fpath_judge.c_str(), "w");
         for (int i = 0; i < queries.size(); i++) {
-            cerr << "running algo for query -> " << queries[i] << " - " << id2qid[queries[i]] << " with judge count -> " << judge_count << endl;
-            run_algo4_for_query(queries[i], ofile, i, judge_count);
+            cerr << "running algo5 for query -> " << queries[i] << " - " << id2qid[queries[i]] << " with judge count -> " << judge_count << endl;
+            run_algo6_for_query(queries[i], ofile, i, judge_count);
         }
         fclose(ofile);
     }

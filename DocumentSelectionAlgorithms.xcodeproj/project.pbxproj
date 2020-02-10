@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D00487F423E0569A0066A71F /* algo7.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D00487F323E0569A0066A71F /* algo7.cpp */; };
 		D011B24723C7BCBF00CBF9B1 /* algo4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D011B24623C7BCBF00CBF9B1 /* algo4.cpp */; };
 		D07146DA23B6B460002733B8 /* algo12.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D07146D923B6B460002733B8 /* algo12.cpp */; };
 		D07146DC23B6BA15002733B8 /* algo13.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D07146DB23B6BA15002733B8 /* algo13.cpp */; };
 		D07146DE23B6BC61002733B8 /* algo14.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D07146DD23B6BC61002733B8 /* algo14.cpp */; };
 		D07146E023B6C641002733B8 /* algo12.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D07146DF23B6C5A7002733B8 /* algo12.h */; };
+		D0B0F22923D1BAEF0015202D /* algo5.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D0B0F22823D1BAEF0015202D /* algo5.cpp */; };
+		D0B0F22C23D2588F0015202D /* algo6.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D0B0F22B23D2588F0015202D /* algo6.cpp */; };
 		D0D5529F23B7E44800ED34B7 /* algo15.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D0D5529E23B7E44800ED34B7 /* algo15.cpp */; };
 		D0D552A123B7E48900ED34B7 /* algo16.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D0D552A023B7E48900ED34B7 /* algo16.cpp */; };
 		D0D552A523B7F3E400ED34B7 /* algo2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D0D552A423B7F3E400ED34B7 /* algo2.cpp */; };
@@ -46,6 +49,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D00487F323E0569A0066A71F /* algo7.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = algo7.cpp; sourceTree = "<group>"; };
 		D011B24623C7BCBF00CBF9B1 /* algo4.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = algo4.cpp; sourceTree = "<group>"; };
 		D011B24823C7BCF900CBF9B1 /* algo4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = algo4.h; sourceTree = "<group>"; };
 		D07146D923B6B460002733B8 /* algo12.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = algo12.cpp; sourceTree = "<group>"; };
@@ -54,6 +58,10 @@
 		D07146DF23B6C5A7002733B8 /* algo12.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = algo12.h; sourceTree = "<group>"; };
 		D07146E123B6C92C002733B8 /* algo13.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = algo13.h; sourceTree = "<group>"; };
 		D07146E223B6C942002733B8 /* algo14.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = algo14.h; sourceTree = "<group>"; };
+		D0B0F22823D1BAEF0015202D /* algo5.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = algo5.cpp; sourceTree = "<group>"; };
+		D0B0F22A23D1BB1A0015202D /* algo5.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = algo5.h; sourceTree = "<group>"; };
+		D0B0F22B23D2588F0015202D /* algo6.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = algo6.cpp; sourceTree = "<group>"; };
+		D0B0F22D23D2589F0015202D /* algo6.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = algo6.h; sourceTree = "<group>"; };
 		D0D5529E23B7E44800ED34B7 /* algo15.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = algo15.cpp; sourceTree = "<group>"; };
 		D0D552A023B7E48900ED34B7 /* algo16.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = algo16.cpp; sourceTree = "<group>"; };
 		D0D552A223B7E49A00ED34B7 /* algo15.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = algo15.h; sourceTree = "<group>"; };
@@ -115,6 +123,9 @@
 				D0D552A023B7E48900ED34B7 /* algo16.cpp */,
 				D0D552A423B7F3E400ED34B7 /* algo2.cpp */,
 				D011B24623C7BCBF00CBF9B1 /* algo4.cpp */,
+				D0B0F22823D1BAEF0015202D /* algo5.cpp */,
+				D0B0F22B23D2588F0015202D /* algo6.cpp */,
+				D00487F323E0569A0066A71F /* algo7.cpp */,
 				D0E5B64923B19C9500E95663 /* hedge.h */,
 				D0E5B64523B19B8700E95663 /* ndcg.h */,
 				D0E5B64323B19A1400E95663 /* algo1.h */,
@@ -125,6 +136,8 @@
 				D0D552A323B7E4A500ED34B7 /* algo16.h */,
 				D0D552A623B7F3F100ED34B7 /* algo2.h */,
 				D011B24823C7BCF900CBF9B1 /* algo4.h */,
+				D0B0F22A23D1BB1A0015202D /* algo5.h */,
+				D0B0F22D23D2589F0015202D /* algo6.h */,
 				D0E5B64123B195D500E95663 /* common.h */,
 				D0E5B65223B1A38200E95663 /* variables.h */,
 			);
@@ -191,8 +204,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0E5B65523B1A88900E95663 /* common.cpp in Sources */,
+				D0B0F22C23D2588F0015202D /* algo6.cpp in Sources */,
 				D0E5B64423B19A1400E95663 /* algo1.cpp in Sources */,
+				D0B0F22923D1BAEF0015202D /* algo5.cpp in Sources */,
 				D07146DC23B6BA15002733B8 /* algo13.cpp in Sources */,
+				D00487F423E0569A0066A71F /* algo7.cpp in Sources */,
 				D07146DE23B6BC61002733B8 /* algo14.cpp in Sources */,
 				D0E5B64823B19C1A00E95663 /* hedge.cpp in Sources */,
 				D011B24723C7BCBF00CBF9B1 /* algo4.cpp in Sources */,

@@ -28,15 +28,15 @@ void run_algo1_for_query(int qid, FILE *ofile) {
     memset(loss, 0, sizeof loss);
     memset(loss_run, 0, sizeof loss_run);
     
+    set < int > judgedDocs;
+    vector < int > judgedDocs_ordered;
+    
     // initialization with weights and probabilities
     for (int i = 0; i < all_runs.size(); i++) {
         int current_run = all_runs[i];
         weights[current_run] = 1.0;
         probs[current_run] = 1.0 / all_runs.size();
     }
-    
-    set < int > judgedDocs;
-    vector < int > judgedDocs_ordered;
     
     int rmax = (int) doc_list_all[qid].size(); // In TREC, it is typically the union of the top 1000 docs retrieved
     long double ln_rmax = log(rmax);
@@ -53,6 +53,7 @@ void run_algo1_for_query(int qid, FILE *ofile) {
         for (int j = 0; j < doc_list[qid].size(); j++) {
             int s = all_runs[i]; // current run
             int d = doc_list[qid][j]; // current document
+            
             if (runs[s][qid].find(d) != runs[s][qid].end()) {
                 // this doc was retrieved by current run
                 loss[s][d] = log10((double) rmax / ranks[s][qid][d]) / 2.0;
@@ -65,7 +66,6 @@ void run_algo1_for_query(int qid, FILE *ofile) {
                 loss[s][d] = (numerator - denominator) / (2 * (rmax - ts));
                 // loss[make_pair(s, d)] = (numerator - denominator) / (2 * (rmax - ts));
             }
-            // cout << loss[s][d] << endl;
         }
     }
     
@@ -103,8 +103,6 @@ void run_algo1_for_query(int qid, FILE *ofile) {
         }
         
         // we have dmax as the maximum weighted document
-        
-        // cout << is_full << ' ' << dmax.first << " ----> " << dmax.second << endl;
         
         judgedDocs.insert(dmax.first);
         judgedDocs_ordered.push_back(dmax.first);
