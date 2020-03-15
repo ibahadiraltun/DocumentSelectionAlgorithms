@@ -9,7 +9,7 @@ system_run = namedtuple("system_run", "name map")
 BASE_FOLDER="/Users/ibahadiraltun/Desktop/InformationRetrieval/DocumentSelectionAlgorithms/"
 # BASE_FOLDER = "";
 
-TREC_VERSION="trec-8" # sadece scorelandirmasi kaldi, robust2004 bos
+TREC_VERSION="trec-8"
 TREC_DATA_PATH= BASE_FOLDER + "trec_dataset/"
 SYSTEM_RUN_RESULTS=BASE_FOLDER + "system_run_results/" + TREC_VERSION + "/"
 TREC_EVAL_PATH= BASE_FOLDER +  "trec_eval/./trec_eval"
@@ -23,7 +23,7 @@ runs_path = TREC_DATA_PATH + TREC_VERSION + "/runs/"
 # const_file_path = 'judgments/'
 # strategies = ['algo12', 'algo13', 'algo14', 'algo15', 'algo16', 'algo2']
 
-strategies = ['algo6']
+strategies = ['4_algo7']
 
 qrels_df = pd.read_csv(official_qrel_path, names = ['qid', 'x1', 'doc', 'rel'], sep = ' ')
 queries = np.unique(qrels_df['qid'])

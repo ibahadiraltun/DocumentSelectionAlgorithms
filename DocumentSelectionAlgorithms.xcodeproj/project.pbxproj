@@ -50,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		D00487F323E0569A0066A71F /* algo7.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = algo7.cpp; sourceTree = "<group>"; };
+		D00C468D240ED685009E53AC /* algo7.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = algo7.h; sourceTree = "<group>"; };
 		D011B24623C7BCBF00CBF9B1 /* algo4.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = algo4.cpp; sourceTree = "<group>"; };
 		D011B24823C7BCF900CBF9B1 /* algo4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = algo4.h; sourceTree = "<group>"; };
 		D07146D923B6B460002733B8 /* algo12.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = algo12.cpp; sourceTree = "<group>"; };
@@ -138,6 +139,7 @@
 				D011B24823C7BCF900CBF9B1 /* algo4.h */,
 				D0B0F22A23D1BB1A0015202D /* algo5.h */,
 				D0B0F22D23D2589F0015202D /* algo6.h */,
+				D00C468D240ED685009E53AC /* algo7.h */,
 				D0E5B64123B195D500E95663 /* common.h */,
 				D0E5B65223B1A38200E95663 /* variables.h */,
 			);
