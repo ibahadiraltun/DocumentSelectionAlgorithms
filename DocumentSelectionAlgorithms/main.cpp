@@ -38,7 +38,7 @@ int main(int argc, char *argv[]) {
         memset(glob_ndcg, 0, sizeof glob_ndcg);
         string out_fpath_judge = out_fpath + to_string(judge_count);
         FILE *ofile = fopen(out_fpath_judge.c_str(), "w");
-        run_algo7_for_query(ofile, judge_count);
+        run_MTF2_for_query(ofile, judge_count);
         fclose(ofile);
 //        for (int i = 0; i < queries.size(); i++) {
 //            cerr << "running algo5 for query -> " << queries[i] << " - " << id2qid[queries[i]] << " with judge count -> " << judge_count << endl;
@@ -48,7 +48,7 @@ int main(int argc, char *argv[]) {
     }
     
     int _tmp;
-    cout << "terminating... ";
+    cout << "Enter an integer to finish. terminating... ";
     cin >> _tmp;
 
     return 0;

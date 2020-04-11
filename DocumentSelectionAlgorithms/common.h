@@ -40,8 +40,8 @@ using namespace std;
 //extern const int RUN_SIZE;
 
 #define DOC_SIZE (400009)
-#define QID_SIZE (510)
-#define UQID_SIZE (55)
+#define QID_SIZE (660)
+#define UQID_SIZE (105)
 #define RUN_SIZE (100)
 #define JUDG_SIZE (1000)
 #define POOL_SIZE (100)

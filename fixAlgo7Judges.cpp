@@ -41,13 +41,14 @@ map < string, vector < string > > lines;
 int main() {
     
     for (int judge_count = 50; judge_count <= 500; judge_count += 50) {
-        string fpath = "/Users/ibahadiraltun/Desktop/InformationRetrieval/DocumentSelectionAlgorithms/4_tmp_judges"
+        string fpath = "/Users/ibahadiraltun/Desktop/InformationRetrieval/DocumentSelectionAlgorithms/MTF2_robust03_new_judges"
                         + to_string(judge_count);
         ifstream infile;
         infile.open(fpath.c_str());
         cerr << fpath << endl;
         int x = 0;
-        cin >> x;
+        cout << "Enter a integer to continue.." << endl;
+        // cin >> x;
         lines.clear();
         while (true) {
             int qid, tmp, rel;
@@ -60,9 +61,10 @@ int main() {
         }
         infile.close();
         cerr << "Reading finish..." << endl;
-        cin >> x;
+        cout << "Enter a integer to continue.." << endl;
+		// cin >> x;
         string out_fpath =
-                "/Users/ibahadiraltun/Desktop/InformationRetrieval/DocumentSelectionAlgorithms/new_qrels/trec-8/4_algo7_"
+                "/Users/ibahadiraltun/Desktop/InformationRetrieval/DocumentSelectionAlgorithms/new_qrels/robust2003/MTF2_new_"
                 + to_string(judge_count);
         FILE *ofile = fopen(out_fpath.c_str(), "w");
         map < string, vector < string > > :: iterator it;

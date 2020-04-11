@@ -9,21 +9,21 @@ system_run = namedtuple("system_run", "name map")
 BASE_FOLDER="/Users/ibahadiraltun/Desktop/InformationRetrieval/DocumentSelectionAlgorithms/"
 # BASE_FOLDER = "";
 
-TREC_VERSION="trec-8"
+TREC_VERSION="robust2003"
 TREC_DATA_PATH= BASE_FOLDER + "trec_dataset/"
 SYSTEM_RUN_RESULTS=BASE_FOLDER + "system_run_results/" + TREC_VERSION + "/"
 TREC_EVAL_PATH= BASE_FOLDER +  "trec_eval/./trec_eval"
 TEST_SCORES_PATH = BASE_FOLDER + "test_scores/" + TREC_VERSION + "/"
 BASEDIR_DRANK = BASE_FOLDER + 'basedir_drank/'
 
-official_qrel_path = TREC_DATA_PATH + TREC_VERSION + "/all_qrels"
+official_qrel_path = TREC_DATA_PATH + TREC_VERSION + "/robust03_qrels.txt"
 qrel_path = BASE_FOLDER + TREC_VERSION
-runs_path = TREC_DATA_PATH + TREC_VERSION + "/runs/"
+runs_path = TREC_DATA_PATH + TREC_VERSION + "/inputfiles/"
 
 # const_file_path = 'judgments/'
 # strategies = ['algo12', 'algo13', 'algo14', 'algo15', 'algo16', 'algo2']
 
-strategies = ['4_algo7']
+strategies = ['MTF2_new']
 
 qrels_df = pd.read_csv(official_qrel_path, names = ['qid', 'x1', 'doc', 'rel'], sep = ' ')
 queries = np.unique(qrels_df['qid'])
@@ -105,4 +105,8 @@ while judge_count <= 500:
             score_file.write('{}\n'.format(str(tau)[0:6]))
 
     judge_count =  judge_count + 50
+
+
+
+
 

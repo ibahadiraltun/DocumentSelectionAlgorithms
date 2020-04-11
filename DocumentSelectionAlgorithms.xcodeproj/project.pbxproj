@@ -28,6 +28,9 @@
 		D0E5B65323B1A6E100E95663 /* variables.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D0E5B65223B1A38200E95663 /* variables.h */; };
 		D0E5B65523B1A88900E95663 /* common.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D0E5B65423B1A88900E95663 /* common.cpp */; };
 		D0E5B65923B1AC7D00E95663 /* ndcg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D0E5B65823B1AC7D00E95663 /* ndcg.cpp */; };
+		D0FC9F9724363F6500D29191 /* MTF.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D0FC9F9624363F6500D29191 /* MTF.cpp */; };
+		D0FC9F9A2438A61F00D29191 /* MTF1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D0FC9F992438A61F00D29191 /* MTF1.cpp */; };
+		D0FC9F9D2438D20B00D29191 /* MTF2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D0FC9F9C2438D20B00D29191 /* MTF2.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -80,6 +83,12 @@
 		D0E5B65223B1A38200E95663 /* variables.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; path = variables.h; sourceTree = "<group>"; };
 		D0E5B65423B1A88900E95663 /* common.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = common.cpp; sourceTree = "<group>"; };
 		D0E5B65823B1AC7D00E95663 /* ndcg.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ndcg.cpp; sourceTree = "<group>"; };
+		D0FC9F9624363F6500D29191 /* MTF.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MTF.cpp; sourceTree = "<group>"; };
+		D0FC9F9824363F8600D29191 /* MTF.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTF.h; sourceTree = "<group>"; };
+		D0FC9F992438A61F00D29191 /* MTF1.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MTF1.cpp; sourceTree = "<group>"; };
+		D0FC9F9B2438A6EF00D29191 /* MTF1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTF1.h; sourceTree = "<group>"; };
+		D0FC9F9C2438D20B00D29191 /* MTF2.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MTF2.cpp; sourceTree = "<group>"; };
+		D0FC9F9E2438D41D00D29191 /* MTF2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTF2.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +125,9 @@
 				D0E5B65823B1AC7D00E95663 /* ndcg.cpp */,
 				D0E5B65423B1A88900E95663 /* common.cpp */,
 				D0E5B64623B19C1A00E95663 /* hedge.cpp */,
+				D0FC9F9624363F6500D29191 /* MTF.cpp */,
+				D0FC9F992438A61F00D29191 /* MTF1.cpp */,
+				D0FC9F9C2438D20B00D29191 /* MTF2.cpp */,
 				D0E5B64223B19A1400E95663 /* algo1.cpp */,
 				D07146D923B6B460002733B8 /* algo12.cpp */,
 				D07146DB23B6BA15002733B8 /* algo13.cpp */,
@@ -128,6 +140,9 @@
 				D0B0F22B23D2588F0015202D /* algo6.cpp */,
 				D00487F323E0569A0066A71F /* algo7.cpp */,
 				D0E5B64923B19C9500E95663 /* hedge.h */,
+				D0FC9F9824363F8600D29191 /* MTF.h */,
+				D0FC9F9B2438A6EF00D29191 /* MTF1.h */,
+				D0FC9F9E2438D41D00D29191 /* MTF2.h */,
 				D0E5B64523B19B8700E95663 /* ndcg.h */,
 				D0E5B64323B19A1400E95663 /* algo1.h */,
 				D07146DF23B6C5A7002733B8 /* algo12.h */,
@@ -205,6 +220,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0FC9F9D2438D20B00D29191 /* MTF2.cpp in Sources */,
 				D0E5B65523B1A88900E95663 /* common.cpp in Sources */,
 				D0B0F22C23D2588F0015202D /* algo6.cpp in Sources */,
 				D0E5B64423B19A1400E95663 /* algo1.cpp in Sources */,
@@ -216,10 +232,12 @@
 				D011B24723C7BCBF00CBF9B1 /* algo4.cpp in Sources */,
 				D0D5529F23B7E44800ED34B7 /* algo15.cpp in Sources */,
 				D0E5B65923B1AC7D00E95663 /* ndcg.cpp in Sources */,
+				D0FC9F9A2438A61F00D29191 /* MTF1.cpp in Sources */,
 				D0E5B63623B1932000E95663 /* main.cpp in Sources */,
 				D0D552A523B7F3E400ED34B7 /* algo2.cpp in Sources */,
 				D07146DA23B6B460002733B8 /* algo12.cpp in Sources */,
 				D0D552A123B7E48900ED34B7 /* algo16.cpp in Sources */,
+				D0FC9F9724363F6500D29191 /* MTF.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

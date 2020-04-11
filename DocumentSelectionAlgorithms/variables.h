@@ -23,6 +23,9 @@ extern void run_algo4_for_query(int qid, FILE *ofile, int current_tot_queries, i
 extern void run_algo5_for_query(int qid, FILE *ofile, int current_tot_queries, int judge_count);
 extern void run_algo6_for_query(int qid, FILE *ofile, int current_tot_queries, int judge_count);
 extern void run_algo7_for_query(FILE *ofile, int judge_count);
+extern void run_MTF_for_query(FILE *ofile, int judge_count);
+extern void run_MTF1_for_query(FILE *ofile, int judge_count);
+extern void run_MTF2_for_query(FILE *ofile, int judge_count);
 extern long double get_ndcg(vector < long double > rel);
 
 
@@ -33,8 +36,8 @@ extern long double get_ndcg(vector < long double > rel);
 //const int RUN_SIZE = 1e2 + 9;
 
 #define DOC_SIZE (400009)
-#define QID_SIZE (510)
-#define UQID_SIZE (55)
+#define QID_SIZE (660)
+#define UQID_SIZE (105)
 #define RUN_SIZE (100)
 #define JUDG_SIZE (1000)
 #define POOL_SIZE (100)

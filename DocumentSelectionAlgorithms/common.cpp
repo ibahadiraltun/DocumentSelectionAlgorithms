@@ -57,8 +57,8 @@ void get_runs(string runs_path) {
                         doc_list[qid_id].push_back(docid_id);
                     }
                     runs[run_id][qid_id].insert(docid_id);
-                    runs_vector[run_id][qid_id].push_back(0.0);
-                    runs_vector_docs[run_id][qid_id].push_back(docid_id);
+                    runs_vector[run_id][qid_id].push_back(0.0); // keeps rel values
+                    runs_vector_docs[run_id][qid_id].push_back(docid_id); // keeps doc ids.
                     int tmp = ++num_of_docs_by_run[run_id][qid_id];
                     doc_list_all[qid_id].push_back(docid_id);
                     all_docs.push_back(docid_id);
@@ -111,13 +111,43 @@ void get_runs(string runs_path) {
         for (int i = 0; i < queries.size(); i++) {
             int qid = queries[i];
             // cout << qid << ' ' << doc_list[qid].size() << endl;
-            sort(doc_list[qid].begin(), doc_list[qid].end());
-            vector < int > :: iterator it = unique(doc_list[qid].begin(), doc_list[qid].end());
-            doc_list[qid].resize(distance(doc_list[qid].begin(), it));
+//            sort(doc_list[qid].begin(), doc_list[qid].end());
+//            vector < int > :: iterator it = unique(doc_list[qid].begin(), doc_list[qid].end());
+//            doc_list[qid].resize(distance(doc_list[qid].begin(), it));
+//
+            map < int, int > used_doc, used_doc_all;
+            vector < int > tmp;
+            for (int i = 0; i < doc_list[qid].size(); i++) {
+                if (used_doc[doc_list[qid][i]]) {
+                    continue;
+                }
+                used_doc[doc_list[qid][i]] = 1;
+                tmp.push_back(doc_list[qid][i]);
+            }
+            doc_list[qid].clear();
+            for (int i = 0; i < tmp.size(); i++) {
+                doc_list[qid].push_back(tmp[i]);
+            }
+            tmp.clear();
             
-            sort(doc_list_all[qid].begin(), doc_list_all[qid].end());
-            it = unique(doc_list_all[qid].begin(), doc_list_all[qid].end());
-            doc_list_all[qid].resize(distance(doc_list_all[qid].begin(), it));
+//            sort(doc_list_all[qid].begin(), doc_list_all[qid].end());
+//            it = unique(doc_list_all[qid].begin(), doc_list_all[qid].end());
+//            doc_list_all[qid].resize(distance(doc_list_all[qid].begin(), it));
+            
+            for (int i = 0; i < doc_list_all[qid].size(); i++) {
+                if (used_doc_all[doc_list_all[qid][i]]) {
+                    continue;
+                }
+                used_doc_all[doc_list_all[qid][i]] = 1;
+                tmp.push_back(doc_list_all[qid][i]);
+            }
+            doc_list_all[qid].clear();
+            for (int i = 0; i < tmp.size(); i++) {
+                doc_list_all[qid].push_back(tmp[i]);
+            }
+            tmp.clear();
+
+            
             cerr << "Total Unique Docs for Query " << qid << " - " << id2qid[qid] << " is -> " << (int) doc_list_all[qid].size() << endl;
             cerr << "Total Pooled Unique Docs for Query " << qid << " - " << id2qid[qid] << " is -> " << (int) doc_list[qid].size() << endl;
             cerr << " -------- " << endl;
